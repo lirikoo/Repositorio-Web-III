@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Bienvenido - Proyecto Prueba{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            
+            <div class="p-5 bg-white rounded-3 shadow-lg text-center hero-section">
+                
+                <h1 class="display-4 hero-title">
+                    ¡Bienvenido a AppVentas!
+                </h1>
+                
+                <p class="lead text-muted">
+                    Esta es la página de presentación de mi proyecto de Django.
+                </p>
+                
+                <hr class="my-4">
+
+                <img src="{% static 'appVentas/img/1.jpeg' %}" 
+                     class="img-fluid rounded mb-4 shadow" 
+                     alt="Gráfico de ventas"
+                     style="max-width: 50%; height: auto;">
+                
+                <p class="lead">
+                    Inicia sesión para acceder a las funciones.
+                </p>
+                
+                <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">
+                    Comenzar
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

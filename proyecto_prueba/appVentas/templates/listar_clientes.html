@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if user.username == 'tecnico01' %}
+
+    usuario: {{ user.username }}
+    <h1>LISTA DE CLIENTES</h1>
+        <ul>
+            {% for cliente in clientes %}
+            <li> {{ cliente.id_cliente }} - {{ cliente.nombre}} - {{ cliente.email}} 
+                <a href = " {% url 'eliminar_cliente' cliente.id_cliente %} ">Eliminar</a> |
+                <a href = " {% url 'actualizar_cliente' cliente.id_cliente %}">Modificar</a> 
+            </li>
+
+            {% endfor %}
+        </ul>
+        <p><a href = "{% url 'crear_cliente' %}" >Nuevo Cliente</p>
+  
+
+{% else %}
+<h2>Ud no tiene permiso para app ventas!!!</h2>
+
+{% endif %}
+
+{% endblock %}
+
+
